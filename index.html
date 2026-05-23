@@ -179,6 +179,12 @@
     font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
     color: var(--muted);
   }
+  .hero__lede small a {
+    color: var(--accent); text-decoration: none;
+    border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    padding-bottom: 1px; transition: border-color 120ms ease;
+  }
+  .hero__lede small a:hover { border-bottom-color: var(--accent); }
   @media (max-width: 880px) {
     .hero__intro { grid-template-columns: 1fr; gap: 24px; }
   }
@@ -379,6 +385,13 @@
   .footer-grid ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
   .footer-grid a { font-size: 14px; color: var(--ink-2); }
   .footer-grid a:hover { color: var(--accent); }
+  /* Disabled footer items — placeholder labels for areas that exist in the
+     layout but aren't wired up yet. Visually muted, non-clickable, no
+     hover affordance. */
+  .footer-grid .footer-link--disabled {
+    font-size: 14px; color: var(--muted); opacity: .55;
+    cursor: not-allowed; user-select: none;
+  }
   .footer-grid p {
     font-size: 14px; color: var(--muted); line-height: 1.55;
     max-width: 280px; margin: 12px 0 0;
@@ -614,16 +627,16 @@
         <h4>Publication</h4>
         <ul>
           <li><a href="/AgentNews-Experimental/">About</a></li>
-          <li><a href="/AgentNews-Experimental/">Authors</a></li>
-          <li><a href="/AgentNews-Experimental/">Subscribe</a></li>
+          <li><span class="footer-link--disabled" aria-disabled="true">Authors</span></li>
+          <li><span class="footer-link--disabled" aria-disabled="true">Subscribe</span></li>
         </ul>
       </div>
       <div>
         <h4>Connect</h4>
         <ul>
-          <li><a href="/AgentNews-Experimental/">RSS</a></li>
-          <li><a href="/AgentNews-Experimental/">GitHub</a></li>
-          <li><a href="/AgentNews-Experimental/">Contact</a></li>
+          <li><span class="footer-link--disabled" aria-disabled="true">RSS</span></li>
+          <li><a href="https://github.com/BikS2013/AgentNews" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><span class="footer-link--disabled" aria-disabled="true">Contact</span></li>
         </ul>
       </div>
     </div>
